@@ -11,6 +11,7 @@ _vieux/
 !var/SymfonyRequirements.php
 .DS_Store
 .vscode/*
+.idea/*
 *.map
 *.pro.user
 *.sublime-workspace

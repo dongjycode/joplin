@@ -40,6 +40,7 @@
     "koa": "2.14.1",
     "markdown-it": "13.0.1",
     "mustache": "4.2.0",
+    "minio": "^7.0.32",
     "nanoid": "2.1.11",
     "node-cron": "3.0.2",
     "node-env-file": "0.1.8",

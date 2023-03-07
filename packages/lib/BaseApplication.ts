@@ -36,6 +36,7 @@ const SyncTargetNextcloud = require('./SyncTargetNextcloud.js');
 const SyncTargetWebDAV = require('./SyncTargetWebDAV.js');
 const SyncTargetDropbox = require('./SyncTargetDropbox.js');
 const SyncTargetAmazonS3 = require('./SyncTargetAmazonS3.js');
+const SyncTargetMinio = require('./SyncTargetMinio.js');
 import EncryptionService from './services/e2ee/EncryptionService';
 import ResourceFetcher from './services/ResourceFetcher';
 import SearchEngineUtils from './services/searchengine/SearchEngineUtils';
@@ -766,6 +767,7 @@ export default class BaseApplication {
 		SyncTargetRegistry.addClass(SyncTargetWebDAV);
 		SyncTargetRegistry.addClass(SyncTargetDropbox);
 		SyncTargetRegistry.addClass(SyncTargetAmazonS3);
+		SyncTargetRegistry.addClass(SyncTargetMinio);
 		SyncTargetRegistry.addClass(SyncTargetJoplinServer);
 		SyncTargetRegistry.addClass(SyncTargetJoplinCloud);
 
