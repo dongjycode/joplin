@@ -84,6 +84,7 @@ const SyncTargetNextcloud = require('@joplin/lib/SyncTargetNextcloud.js');
 const SyncTargetWebDAV = require('@joplin/lib/SyncTargetWebDAV.js');
 const SyncTargetDropbox = require('@joplin/lib/SyncTargetDropbox.js');
 const SyncTargetAmazonS3 = require('@joplin/lib/SyncTargetAmazonS3.js');
+const SyncTargetMinio = require('@joplin/lib/SyncTargetMinio.js');
 import BiometricPopup from './components/biometrics/BiometricPopup';
 
 SyncTargetRegistry.addClass(SyncTargetNone);
@@ -95,6 +96,7 @@ SyncTargetRegistry.addClass(SyncTargetFilesystem);
 SyncTargetRegistry.addClass(SyncTargetAmazonS3);
 SyncTargetRegistry.addClass(SyncTargetJoplinServer);
 SyncTargetRegistry.addClass(SyncTargetJoplinCloud);
+SyncTargetRegistry.addClass(SyncTargetMinio);
 
 import FsDriverRN from './utils/fs-driver-rn';
 import DecryptionWorker from '@joplin/lib/services/DecryptionWorker';

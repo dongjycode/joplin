@@ -711,7 +711,83 @@ class Setting extends BaseModel {
 				label: () => _('Joplin Cloud password'),
 				secure: true,
 			},
-
+			'sync.11.path': {
+				value: '',
+				type: SettingItemType.String,
+				section: 'sync',
+				show: (settings: any) => {
+					try {
+						return settings['sync.target'] === SyncTargetRegistry.nameToId('minio');
+					} catch (error) {
+						return false;
+					}
+				},
+				filter: value => {
+					return value ? rtrimSlashes(value) : '';
+				},
+				public: true,
+				label: () => _('Minio bucket'),
+				description: () => emptyDirWarning,
+				storage: SettingStorage.File,
+			},
+			'sync.11.endpoint': {
+				value: '',
+				type: SettingItemType.String,
+				section: 'sync',
+				show: (settings: any) => {
+					return settings['sync.target'] === SyncTargetRegistry.nameToId('minio');
+				},
+				filter: value => {
+					return value ? value.trim() : '';
+				},
+				public: true,
+				label: () => _('Minio endpoint'),
+				storage: SettingStorage.File,
+			},
+			'sync.11.port': {
+				value: '',
+				type: SettingItemType.Int,
+				section: 'sync',
+				show: (settings: any) => {
+					return settings['sync.target'] === SyncTargetRegistry.nameToId('minio');
+				},
+				public: true,
+				label: () => _('Minio port'),
+				storage: SettingStorage.File,
+			},
+			'sync.11.accessKey': {
+				value: '',
+				type: SettingItemType.String,
+				section: 'sync',
+				show: (settings: any) => {
+					return settings['sync.target'] === SyncTargetRegistry.nameToId('minio');
+				},
+				public: true,
+				label: () => _('Minio access key'),
+				storage: SettingStorage.File,
+			},
+			'sync.11.secretKey': {
+				value: '',
+				type: SettingItemType.String,
+				section: 'sync',
+				show: (settings: any) => {
+					return settings['sync.target'] === SyncTargetRegistry.nameToId('minio');
+				},
+				public: true,
+				label: () => _('Minio secretKey'),
+				secure: true,
+			},
+			'sync.11.useSSL': {
+				value: false,
+				type: SettingItemType.Bool,
+				section: 'sync',
+				show: (settings: any) => {
+					return settings['sync.target'] === SyncTargetRegistry.nameToId('minio');
+				},
+				public: true,
+				label: () => _('useSSL'),
+				storage: SettingStorage.File,
+			},
 			'sync.5.syncTargets': { value: {}, type: SettingItemType.Object, public: false },
 
 			'sync.resourceDownloadMode': {
@@ -750,6 +826,7 @@ class Setting extends BaseModel {
 			'sync.8.context': { value: '', type: SettingItemType.String, public: false },
 			'sync.9.context': { value: '', type: SettingItemType.String, public: false },
 			'sync.10.context': { value: '', type: SettingItemType.String, public: false },
+			'sync.11.context': { value: '', type: SettingItemType.String, public: false },
 
 			'sync.maxConcurrentConnections': { value: 5, type: SettingItemType.Int, storage: SettingStorage.File, isGlobal: true, public: true, advanced: true, section: 'sync', label: () => _('Max concurrent connections'), minimum: 1, maximum: 20, step: 1 },
 

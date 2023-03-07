@@ -39,6 +39,7 @@
     "knex": "2.4.2",
     "koa": "2.14.1",
     "markdown-it": "13.0.1",
+    "minio": "^7.0.32",
     "mustache": "4.2.0",
     "nanoid": "2.1.11",
     "node-cron": "3.0.2",
